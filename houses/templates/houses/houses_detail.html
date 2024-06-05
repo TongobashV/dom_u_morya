@@ -1,12 +1,8 @@
+{% extends "index.html" %}
 {% load thumbnail %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ house.name }}</title>
-</head>
-<body>
 
+{% block application %}
+<a href="{% url "home" %}">Главная</a>
     <div>
         <h2>{{ house.name }}</h2>
         <div>{{ house.price }}</div>
@@ -15,6 +11,5 @@
             <img src="{{ im.url }}" alt="Дом {{ house.name }}">
          {% endthumbnail %}
     </div>
-
-</body>
-</html>
+{% endblock %}
+<h2>Отзывы</h2>
