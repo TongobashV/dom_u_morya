@@ -11,5 +11,10 @@
             <img src="{{ im.url }}" alt="Дом {{ house.name }}">
          {% endthumbnail %}
     </div>
+
+    <h2>Заявка</h2>
+    <form method="post">
+        {{ form.as_p }}
+        <button type="submit">Отправить заявку</button>
+    </form>
 {% endblock %}
-<h2>Отзывы</h2>
