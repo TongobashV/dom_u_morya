@@ -4,6 +4,7 @@ from django.db import models
 # Create your models here.
 
 class House(models.Model):
+    active = models.BooleanField("активен", default=True)
     name = models.CharField("название", max_length=50)
     price = models.IntegerField("цена")
     description = models.TextField("описание")
