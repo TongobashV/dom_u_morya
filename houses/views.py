@@ -8,7 +8,7 @@ from houses.forms import HousesFilterForms
 
 
 def houses_list(request):
-    houses = House.objects.all()
+    houses = House.objects.filter(active=True)
     form = HousesFilterForms(request.GET)
     if form.is_valid():
         if form.cleaned_data["min_price"]:
@@ -18,7 +18,7 @@ def houses_list(request):
     return render(request, "houses/houses_list.html", {"houses": houses, "form": form})
 
 def house_detail(request, house_id):
-    house = get_object_or_404(House, id=house_id)
+    house = get_object_or_404(House, id=house_id, active=True)
     form = OrderForm(request.POST or None, initial={"house":house})
     if request.method == "POST":
         if form.is_valid():
