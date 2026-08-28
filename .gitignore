@@ -4,3 +4,7 @@ db.sqlite3
 /media
 /cache
 dom_u_morya/local_settings.py
+.envdb.sqlite3.backup
+db/
+__pycache__/
+data_clean.json

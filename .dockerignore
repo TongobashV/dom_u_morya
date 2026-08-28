@@ -1,0 +1,10 @@
+db.sqlite3
+db.sqlite3.backup
+cache
+.idea
+.env
+.gitignore
+.git
+__pycache__
+*.pyc
+

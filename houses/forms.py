@@ -1,11 +1,11 @@
 from django import forms
 
 class HousesFilterForms(forms.Form):
-    min_price = forms.IntegerField(label="от", required=False)
+    min_price = forms.IntegerField(label="від", required=False)
     max_price = forms.IntegerField(label="до", required=False)
-    query = forms.CharField(label="описание", required=False)
-    ordering = forms.ChoiceField(label="сортировка", required=False, choices=[
-        ("name", "по алфавиту"),
-        ("price", "дешевые сверху"),
-        ("-price", "дорогие сверху")
+    query = forms.CharField(label="опис", required=False)
+    ordering = forms.ChoiceField(label="сортування", required=False, choices=[
+        ("name", "за алфавітом"),
+        ("price", "дешеві зверху"),
+        ("-price", "дорожчі зверху")
     ])

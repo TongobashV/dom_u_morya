@@ -3,23 +3,23 @@
 
 {% block application %}
     <div class="house-detail">
-        <a href="{% url 'home' %}">Главная</a>
+        <a href="{% url 'home' %}">Головна</a>
 
-        <h1 class="house-name">{{ house.name }} <span class="price">{{ house.price|intcomma }} &#x20bd;</span></h1>
+        <h1 class="house-name">{{ house.name }} <span class="price">{{ house.price|intcomma }} &#36;</span></h1>
         <div></div>
         <div>{{ house.description }}</div>
         {% thumbnail house.photo "650x400" crop="center" as im %}
-            <img src="{{ im.url }}" alt="Дом {{ house.name }}">
+            <img src="{{ im.url }}" alt="Будинок {{ house.name }}">
         {% endthumbnail %}
 
         <h2>Заявка</h2>
         {% if sent %}
-            <p>Спасибо! Ваша заявка принята.</p>
+            <p>Дякую! Ваша заявка прийнята.</p>
         {% endif %}
         <form method="post" class="order-form">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit">Отправить заявку</button>
+            <button type="submit">Залишити заявку</button>
         </form>
     </div>
 {% endblock %}

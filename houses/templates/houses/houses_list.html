@@ -4,7 +4,7 @@
 {% block application %}
     <form method="get" class="search-form">
         {{ form.as_p }}
-        <p><button type="submit">Поиск</button></p>
+        <p><button type="submit">Пошук</button></p>
     </form>
 
     <ul class="houses">
@@ -14,7 +14,7 @@
                 <h2>{{ house.name }}</h2>
                 <div class="price">{{ house.price|intcomma }}</div>
                 {% thumbnail house.photo "325x200" crop="center" as im %}
-                    <img src="{{ im.url }}" alt="Дом {{ house.name }}" class="img">
+                    <img src="{{ im.url }}" alt="Будинок {{ house.name }}" class="img">
                 {% endthumbnail %}
             </a>
         </li>

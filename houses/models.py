@@ -4,14 +4,14 @@ from django.db import models
 # Create your models here.
 
 class House(models.Model):
-    active = models.BooleanField("активен", default=True)
-    name = models.CharField("название", max_length=50)
-    price = models.IntegerField("цена")
-    description = models.TextField("описание")
-    photo = models.ImageField("фотография", upload_to="houses/photo", default="", blank=True)
+    active = models.BooleanField("активний", default=True)
+    name = models.CharField("назва", max_length=50)
+    price = models.IntegerField("ціна")
+    description = models.TextField("опис")
+    photo = models.ImageField("фотографія", upload_to="houses/photo", default="", blank=True)
     class Meta:
-        verbose_name = "дом"
-        verbose_name_plural = "дома"
+        verbose_name = "будинок"
+        verbose_name_plural = "будинки"
         ordering = ["-active", "name"]
 
 
