@@ -149,5 +149,5 @@ CACHES = {
 }
 try:
     from dom_u_morya.local_settings import *
-except "importError":
+except ImportError:
     pass
