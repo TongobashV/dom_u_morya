@@ -53,3 +53,10 @@ jobs:
         run: |
           ssh ${{ secrets.HETZNER_USER }}@${{ secrets.HETZNER_HOST }} "hostname"
           
+      - name: Deploy Hetzner
+        run: |
+          ssh ${{ secrets.HETZNER_USER }}@${{ secrets.HETZNER_HOST }} "
+          cd /opt/deploy/dom_u_morya &&
+          docker compose pull app &&
+          docker compose up -d app
+          "
