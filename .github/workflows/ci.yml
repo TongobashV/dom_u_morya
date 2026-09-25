@@ -43,3 +43,13 @@ jobs:
             tags: |
               tongobash/dom_u_morya:latest
               tongobash/dom_u_morya:${{ github.sha }}
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secretes.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -H ${{ secrets.HETZNER_HOST }} >> ~/.ssh/know_hosts
+      - name: Test SSH connection
+        run: |
+          ssh ${{ secrets.HETZNER_USER }}@${{ secrets.HETZNER_HOST }} "hostname"
+          
